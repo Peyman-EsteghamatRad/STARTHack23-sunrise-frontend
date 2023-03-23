@@ -4,6 +4,7 @@ import image from '../assets/LandingBackground.png';
 import Header from '../components/header';
 import { TouchableOpacity } from 'react-native';
 
+
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
@@ -51,8 +52,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     alignSelf: 'center',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 20,
     paddingBottom: 30,
+    fontFamily: 'poppins-bold',
   },
   buttonStyleLogin: {
     width: 95,
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontWeight: 'bold',
     fontSize: 14,
+    fontFamily: 'poppins-bold',
   }
   
 
