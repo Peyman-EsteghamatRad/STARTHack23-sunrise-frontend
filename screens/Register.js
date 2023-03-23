@@ -44,7 +44,6 @@ export default function Register() {
           return;
         }
         const data = response.json();
-        console.log(data)
         return Promise.all([status, data]);
       })
       .then(([s,d]) => {

@@ -7,10 +7,15 @@ import React, {useState} from 'react';
 
 
 
-export default function LogIn() {
+export default function LogIn({ navigation }) {
+
+  var userID = null;
 
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [error, setError] = useState(false);
+  const [succ, setSucc] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const changeEmil = (uEmail)=>{
     setEmail(uEmail);
@@ -23,26 +28,32 @@ export default function LogIn() {
 
   const handleLogIn = () =>{
     const requestOptions = {
-      method: 'PUT',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
         email: email,
         password: password
        })
   };
-  fetch('https://sunrise-backend-kfxr.onrender.com/register', requestOptions)
+  fetch('https://sunrise-backend-kfxr.onrender.com/login', requestOptions)
       .then(response => {
         const status = response.status;
+        console.log(response.status);
         const data = response.json();
-        console.log(status)
         return Promise.all([status, data]);
       })
-      .then(([s,d]) => {
-        if(s != 200){
-          setErrorMsg(d.error);
+      .then(([s, d]) => {
+        if(s == 200){
+          console.log('OK')
+          setSucc(true);
+          setError(false);
+          userID = d.id;
+          console.log(userID);
+          navigation.navigate("streams")
         }else{
-          console.log(s,d);
-
+          setSucc(false);
+          setError(true);
+          setErrorMsg(d.error)
         }
       });
   }
@@ -73,6 +84,11 @@ export default function LogIn() {
         style={styles.signInButton}
         onPress = {handleLogIn}/>
     </View>
+
+
+    {(error && <Text style={styles.errorText}>{errorMsg}</Text>)}
+    {(succ && <Text style={styles.succText}>Loged In</Text>)}
+
       </View>
     );
   
@@ -123,6 +139,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 30,
     top: 350
+  },
+  errorText:{
+    color: '#e60303',
+    alignSelf: 'center',
+    top: 405
+  },
+  succText:{
+    color: '#00f91e',
+    alignSelf: 'center',
+    top: 405
   }
 
 

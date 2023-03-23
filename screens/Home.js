@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, Button, StyleSheet, Text, View } from 'react-native';
 import image from '../assets/LandingBackground.png';
 import Header from '../components/header';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 export default function Home({ navigation }) {
   return (
