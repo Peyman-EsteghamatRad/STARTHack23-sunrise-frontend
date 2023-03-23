@@ -55,6 +55,7 @@ const Streams = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
+    top: 50
   },
   item: {
     flexDirection: 'row',
