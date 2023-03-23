@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, Button, StyleSheet, Text, View } from 'react-native';
 import image from '../assets/LandingBackground.png';
 import Header from '../components/header';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Home({ navigation }) {
   return (
@@ -10,16 +11,20 @@ export default function Home({ navigation }) {
         <Header/>
       </View>
       <ImageBackground source={image} style={styles.image}>
-      <Button
-      title='login'
-      onPress={() => navigation.navigate("login")}/>
-
-      <Button 
-      title='register'
-      onPress={() => navigation.navigate("register")}/>
-      <StatusBar style="auto" />
-      <Text style={styles.headText}>Seems like you are not logged in...</Text>
-      <Text style={styles.baseText}>Log in now or create a new account to start watching your favourite teams live!</Text>
+      
+      <View style={{alignContent: 'center'}}>
+        <Text style={styles.headText}>
+          Seems like you are not logged in yet...
+        </Text>
+        <View style={{ flexDirection:"row", alignContent: 'center', justifyContent: 'center', gap: 30}}>
+            <TouchableOpacity style={styles.buttonStyleLogin} onPress={() => navigation.navigate("login")}>
+              <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyleRegister} onPress={() => navigation.navigate("register")}>
+              <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
+        </View>
+      </View>
 
       </ImageBackground>
     </View>
@@ -42,15 +47,34 @@ const styles = StyleSheet.create({
     backgroundColor: '#041522'
   },
   headText: {
+    paddingTop: 200,
     color: '#FFFFFF',
     alignSelf: 'center',
     fontWeight: 'bold',
+    fontSize: 18,
+    paddingBottom: 30,
   },
-  bottomText: {
+  buttonStyleLogin: {
+    width: 95,
+    height: 60,
+    padding: 20,
+    backgroundColor: '#FF8515',
+    borderRadius: 20,
+  },
+  buttonStyleRegister: {
+    width: 100,
+    height: 60,
+    padding: 20,
+    backgroundColor: '#7C15FF',
+    borderRadius: 20,
     
   },
-  navBar: {
-
+  buttonText: {
+    color: '#FFFFFF',
+    alignSelf: 'center',
+    fontWeight: 'bold',
+    fontSize: 14,
   }
+  
 
 });
