@@ -5,7 +5,7 @@ import image from '../assets/LandingBackground.png';
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={navBar}>
+      <View style={styles.navBar}>
         
       </View>
       <ImageBackground source={image} style={styles.image}>
