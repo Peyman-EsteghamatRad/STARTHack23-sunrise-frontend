@@ -105,7 +105,8 @@ const styles = StyleSheet.create({
   container:{
     textAlign: 'center',
     backgroundColor: '#041522',
-    height:1000
+    height:1000,
+    alignItems: 'center',
   },
   loginText:{
     textAlign:'center',
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
   usernameText: {
     color: '#FFC700',
     top:205,
-    left:37,
+    right: 145,
     fontFamily: 'poppins-regular',
   },
   passwordInput:{
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
   passwordText: {
     color: '#FFC700',
     top:255,
-    left:37,
+    right: 130,
     fontFamily: 'poppins-regular',
   },
   signInButton:{
