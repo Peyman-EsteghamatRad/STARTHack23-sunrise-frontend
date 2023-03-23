@@ -10,7 +10,7 @@ export default function LogIn() {
       <View style={styles.container}>
         <Text style={styles.loginText}>Login</Text>
 
-        <Text style={styles.usernameText}>Username/Email</Text>
+        <Text style={styles.usernameText}>Email</Text>
           <TextInput
         style={styles.userInput}
       />
@@ -19,8 +19,12 @@ export default function LogIn() {
           <TextInput
         style={styles.passwordInput}
       />
-
-        
+      <View style={styles.signInButton}>
+      <Button
+        title='Sign In'
+        color='#FF8515'
+        style={styles.signInButton}/>
+    </View>
       </View>
     );
   
@@ -55,7 +59,7 @@ const styles = StyleSheet.create({
   },
   passwordInput:{
     alignSelf: 'center',
-    top: 210,
+    top: 260,
     width:350,
     borderRadius: 10,
     backgroundColor: '#ffffff',
@@ -66,6 +70,12 @@ const styles = StyleSheet.create({
     top:255,
     left:37,
   },
+  signInButton:{
+    width: 175,
+    alignSelf: 'center',
+    borderRadius: 30,
+    top: 350
+  }
 
 
 });

@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  console.disableYellowBox = true;
   return (
     <NavigationContainer>
       <Stack.Navigator>
