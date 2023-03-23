@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, Button, StyleSheet, Text, View } from 'react-native';
 import image from '../assets/LandingBackground.png';
+import Header from '../components/header';
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.navBar}>
-        
+        <Header/>
       </View>
       <ImageBackground source={image} style={styles.image}>
       <Button
@@ -36,11 +37,11 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 500,
     height: 500,
-    resizeMode: 'center',
+    resizeMode: 'contain',
     justifyContent: 'center',
+    backgroundColor: '#041522'
   },
   headText: {
-    fontFamily: 'Poppins',
     color: '#FFFFFF',
     alignSelf: 'center',
     fontWeight: 'bold',
