@@ -13,7 +13,7 @@ export default function App() {
         <Stack.Screen 
           name="home"
           component={HomeScreen}
-          options={{title: "MySpace"}}
+          options={{headerShown: false}}
         />
         <Stack.Screen 
           name="login"
