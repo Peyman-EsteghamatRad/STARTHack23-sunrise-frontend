@@ -5,6 +5,9 @@ export default function Register() {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
 
   const changeUsername = (uName)=>{
     setUsername(uName);
@@ -30,9 +33,22 @@ export default function Register() {
   };
   fetch('https://sunrise-backend-kfxr.onrender.com/register', requestOptions)
       .then(response => {
-        console.log(response.status);
-        return response.json();
+        const status = response.status;
+        const data = response.json();
+        console.log(status)
+        return Promise.all([status, data]);
       })
+      .then(([s,d]) => {
+        if(s != 200){
+          console.log(s,d);
+          setError(true);
+          setErrorMsg(d.error);
+        }else{
+          console.log(s,d);
+
+          setError(false);
+        }
+      });
   }
 
   return (
@@ -64,6 +80,10 @@ export default function Register() {
         style={styles.registerButton}
         onPress = {handleRegister}/>
     </View>
+
+    {(error && <Text style={styles.errorText}>{errorMsg}</Text>)}
+    {(!error && <Text style={styles.succText}>Account created</Text>)}
+
       </View>
 
       
@@ -129,6 +149,16 @@ registerButton:{
   alignSelf: 'center',
   borderRadius: 30,
   top: 380
+},
+errorText:{
+  color: '#e60303',
+  alignSelf: 'center',
+  top: 405
+},
+succText:{
+  color: '#00f91e',
+  alignSelf: 'center',
+  top: 405
 }
 
 
