@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native';
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.navBar}>
+      <View>
         <Header/>
       </View>
       <ImageBackground source={image} style={styles.image}>

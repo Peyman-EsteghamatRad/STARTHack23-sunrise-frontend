@@ -1,5 +1,7 @@
 import { Button, StyleSheet, Text, View, TextInput} from 'react-native';
 import React, {useState} from 'react';
+import Header from '../components/header';
+
 
 export default function Register() {
   console.disableYellowBox = true;
@@ -58,6 +60,9 @@ export default function Register() {
 
   return (
     <View style={styles.container}>
+      <View>
+        <Header/>
+      </View>
       <Text style={styles.loginText}>Register</Text>
 
       <Text style={styles.usernameText}>Username</Text>
@@ -108,7 +113,8 @@ loginText:{
   top: 120,
   fontWeight: 'bold',
   color: '#ffffff',
-  fontSize: 40
+  fontSize: 40,
+  fontFamily: 'poppins-bold',
 },
 userInput:{
   alignSelf: 'center',
@@ -116,12 +122,14 @@ userInput:{
   width:350,
   borderRadius: 10,
   backgroundColor: '#ffffff',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'poppins-regular',
 },
 usernameText: {
   color: '#FFC700',
   top:205,
   left:37,
+  fontFamily: 'poppins-regular',
 },
 passwordInput:{
   alignSelf: 'center',
@@ -129,12 +137,14 @@ passwordInput:{
   width:350,
   borderRadius: 10,
   backgroundColor: '#ffffff',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'poppins-regular',
 },
 passwordText: {
   color: '#FFC700',
   top:305,
   left:37,
+  fontFamily: 'poppins-regular',
 },
 emailInput:{
   alignSelf: 'center',
@@ -142,12 +152,14 @@ emailInput:{
   width:350,
   borderRadius: 10,
   backgroundColor: '#ffffff',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'poppins-regular',
 },
 emailText: {
   color: '#FFC700',
   top:255,
   left:37,
+  fontFamily: 'poppins-regular',
 },
 registerButton:{
   width: 175,
@@ -158,12 +170,14 @@ registerButton:{
 errorText:{
   color: '#e60303',
   alignSelf: 'center',
-  top: 405
+  top: 405,
+  fontFamily: 'poppins-regular',
 },
 succText:{
   color: '#00f91e',
   alignSelf: 'center',
-  top: 405
+  top: 405,
+  fontFamily: 'poppins-regular',
 }
 
 

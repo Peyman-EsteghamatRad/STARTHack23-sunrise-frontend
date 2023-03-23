@@ -1,5 +1,7 @@
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 import React, {useState} from 'react';
+import Header from '../components/header';
+
 
 
 
@@ -63,7 +65,11 @@ export default function LogIn({ navigation }) {
 
 
     return (
+      
       <View style={styles.container}>
+        <View>
+        <Header/>
+        </View>
         <Text style={styles.loginText}>Login</Text>
 
         <Text style={styles.usernameText}>Email</Text>
@@ -106,7 +112,8 @@ const styles = StyleSheet.create({
     top: 120,
     fontWeight: 'bold',
     color: '#ffffff',
-    fontSize: 40
+    fontSize: 40,
+    fontFamily: 'poppins-bold',
   },
   userInput:{
     alignSelf: 'center',
@@ -114,12 +121,14 @@ const styles = StyleSheet.create({
     width:350,
     borderRadius: 10,
     backgroundColor: '#ffffff',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'poppins-regular',
   },
   usernameText: {
     color: '#FFC700',
     top:205,
     left:37,
+    fontFamily: 'poppins-regular',
   },
   passwordInput:{
     alignSelf: 'center',
@@ -127,28 +136,33 @@ const styles = StyleSheet.create({
     width:350,
     borderRadius: 10,
     backgroundColor: '#ffffff',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'poppins-regular',
   },
   passwordText: {
     color: '#FFC700',
     top:255,
     left:37,
+    fontFamily: 'poppins-regular',
   },
   signInButton:{
     width: 175,
     alignSelf: 'center',
     borderRadius: 30,
-    top: 350
+    top: 350,
+    fontFamily: 'poppins-regular',
   },
   errorText:{
     color: '#e60303',
     alignSelf: 'center',
-    top: 405
+    top: 405,
+    fontFamily: 'poppins-regular',
   },
   succText:{
     color: '#00f91e',
     alignSelf: 'center',
-    top: 405
+    top: 405,
+    fontFamily: 'poppins-regular',
   }
 
 
