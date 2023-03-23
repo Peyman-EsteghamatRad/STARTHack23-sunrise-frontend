@@ -12,7 +12,8 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     container: {
-        height: 60,
+        paddingTop: 30,
+        height: 80,
         width: 375,
         color: '#020E18',
     },

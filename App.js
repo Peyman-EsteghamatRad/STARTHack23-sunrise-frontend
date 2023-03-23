@@ -32,14 +32,18 @@ let [fontsLoaded]= useFonts({
         <Stack.Screen 
           name="login"
           component={LogIn}
+          options={{headerShown: false}}
+
         />
         <Stack.Screen 
           name="register"
           component={Register}
+          options={{headerShown: false}}
         />
         <Stack.Screen 
           name="streams"
           component={Streams}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
