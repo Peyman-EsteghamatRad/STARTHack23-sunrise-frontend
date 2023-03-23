@@ -1,11 +1,14 @@
 import { Button, StyleSheet, Text, View, TextInput} from 'react-native';
-import React, {useState, UseState} from 'react';
+import React, {useState} from 'react';
 
 export default function Register() {
+  console.disableYellowBox = true;
+
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(false);
+  const [succ, setSucc] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
 
@@ -30,25 +33,28 @@ export default function Register() {
         name: username,
         password: password
        })
-  };
+  }; //FEHLERBEHANDLUNG BEI FALSCHER EMAIL
   fetch('https://sunrise-backend-kfxr.onrender.com/register', requestOptions)
       .then(response => {
         const status = response.status;
+        if(status == 200){
+          console.log('OK')
+          setSucc(true);
+          setError(false);
+          return;
+        }
         const data = response.json();
-        console.log(status)
+        console.log(data)
         return Promise.all([status, data]);
       })
       .then(([s,d]) => {
-        if(s != 200){
-          console.log(s,d);
+        if(s === 400){
           setError(true);
-          setErrorMsg(d.error);
-        }else{
-          console.log(s,d);
-
-          setError(false);
+          setSucc(false);
+          setErrorMsg(d.error)
         }
-      });
+      })
+      .catch(error => console.log(error));
   }
 
   return (
@@ -82,7 +88,7 @@ export default function Register() {
     </View>
 
     {(error && <Text style={styles.errorText}>{errorMsg}</Text>)}
-    {(!error && <Text style={styles.succText}>Account created</Text>)}
+    {(succ && <Text style={styles.succText}>Account created</Text>)}
 
       </View>
 

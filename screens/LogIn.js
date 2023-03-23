@@ -1,4 +1,6 @@
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
+import React, {useState} from 'react';
+
 
 
 
@@ -37,13 +39,10 @@ export default function LogIn() {
       })
       .then(([s,d]) => {
         if(s != 200){
-          console.log(s,d);
-          setError(true);
           setErrorMsg(d.error);
         }else{
           console.log(s,d);
 
-          setError(false);
         }
       });
   }
