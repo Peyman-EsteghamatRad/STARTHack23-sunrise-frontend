@@ -1,41 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, FlatList, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
-const DATA = [
-  {
-    id: '1',
-    title: 'Item 1',
-    description: 'Description of item 1',
-    thumbnail: 'https://source.unsplash.com/random/200x200',
-  },
-  {
-    id: '2',
-    title: 'Item 2',
-    description: 'Description of item 2',
-    thumbnail: 'https://source.unsplash.com/random/200x200',
-  },
-  {
-    id: '3',
-    title: 'Item 3',
-    description: 'Description of item 3',
-    thumbnail: 'https://source.unsplash.com/random/200x200',
-  },
-];
 
-const Item = ({ title, description, thumbnail }) => (
+
+const Item = ({ name, description, thumbnail }) => (
   <TouchableOpacity style={styles.item}>
-    <Image source={{ uri: thumbnail }} style={styles.thumbnail} />
+    <Image source={{ uri: thumbnail }} style={styles.thumbnail}  />
     <View style={styles.textContainer}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.name}>{name}</Text>
       <Text style={styles.description}>{description}</Text>
     </View>
   </TouchableOpacity>
   
 );
 
+
 const Streams = () => {
+
+    const[DATA, setStreams] = useState([]);
+
+    const getStreamsFromAPI = () => {
+        return fetch('https://sunrise-backend-kfxr.onrender.com/getStreams')
+          .then(response => response.json())
+          .then(json => {
+            setStreams(json);
+            return;
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      };
+
+      useEffect(() =>{
+      getStreamsFromAPI();}, []);
+      
+
+
+
+
   const renderItem = ({ item }) => (
-    <Item title={item.title} description={item.description} thumbnail={item.thumbnail} />
+    <Item name={item.name} description={item.description} thumbnail={item.thumbnail} />
   );
 
   return (
