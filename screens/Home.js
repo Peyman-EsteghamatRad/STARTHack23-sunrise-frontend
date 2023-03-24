@@ -3,9 +3,12 @@ import { ImageBackground, Button, StyleSheet, Text, View } from 'react-native';
 import image from '../assets/LandingBackground.png';
 import Header from '../components/header';
 import { TouchableOpacity } from 'react-native';
-
+import { LogBox } from 'react-native';
 
 export default function Home({ navigation }) {
+  
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
   return (
     <View style={styles.container}>
       <View>

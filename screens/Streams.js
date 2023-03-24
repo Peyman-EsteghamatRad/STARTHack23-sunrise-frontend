@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, FlatList, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { LogBox } from 'react-native';
 
 
 
-const Item = ({ name, description, thumbnail }) => (
-  <TouchableOpacity style={styles.item}>
-    <Image source={{ uri: thumbnail }} style={styles.thumbnail}  />
-    <View style={styles.textContainer}>
-      <Text style={styles.name}>{name}</Text>
-      <Text style={styles.description}>{description}</Text>
-    </View>
-  </TouchableOpacity>
-  
-);
+export var videoId = -1;
 
 
-const Streams = () => {
+
+
+const Streams = ({navigation}) => {
+  LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+  LogBox.ignoreAllLogs();//Ignore all log notifications
+
+    const Item = ({ name, description, thumbnail, id }) => (
+        <TouchableOpacity style={styles.item} onPress={() => {
+          videoId = id;
+          navigation.navigate("videoView")}}>
+          <Image source={{ uri: thumbnail }} style={styles.thumbnail}  />
+          <View style={styles.textContainer}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.description}>{description}</Text>
+          </View>
+        </TouchableOpacity>
+        
+      );
 
     const[DATA, setStreams] = useState([]);
 
@@ -39,7 +48,7 @@ const Streams = () => {
 
 
   const renderItem = ({ item }) => (
-    <Item name={item.name} description={item.description} thumbnail={item.thumbnail} />
+    <Item name={item.name} description={item.description} thumbnail={item.thumbnail} id={item.id} />
   );
 
   return (

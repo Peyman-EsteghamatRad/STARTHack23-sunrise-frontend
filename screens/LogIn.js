@@ -1,17 +1,19 @@
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 import React, {useState} from 'react';
 import Header from '../components/header';
+import { LogBox } from 'react-native';
+
+
+export var uid = 0;
 
 
 
 
+export default function LogIn({ navigation }) {      
 
-
-
-
-export default function LogIn({ navigation }) {
-
-  var userID = null;
+  
+  LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+  LogBox.ignoreAllLogs();//Ignore all log notifications
 
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -49,8 +51,8 @@ export default function LogIn({ navigation }) {
           console.log('OK')
           setSucc(true);
           setError(false);
-          userID = d.id;
-          console.log(userID);
+          uid = d.id;
+          console.log(uid);
           navigation.navigate("streams")
         }else{
           setSucc(false);
@@ -93,7 +95,7 @@ export default function LogIn({ navigation }) {
 
 
     {(error && <Text style={styles.errorText}>{errorMsg}</Text>)}
-    {(succ && <Text style={styles.succText}>Loged In</Text>)}
+    {(succ && <Text style={styles.succText}>Logd In</Text>)}
 
       </View>
     );

@@ -1,10 +1,12 @@
 import { Button, StyleSheet, Text, View, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import Header from '../components/header';
+import { LogBox } from 'react-native';
 
 
 export default function Register() {
-  console.disableYellowBox = true;
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
@@ -35,7 +37,7 @@ export default function Register() {
         name: username,
         password: password
        })
-  }; //FEHLERBEHANDLUNG BEI FALSCHER EMAIL
+  }; 
   fetch('https://sunrise-backend-kfxr.onrender.com/register', requestOptions)
       .then(response => {
         const status = response.status;
