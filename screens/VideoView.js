@@ -39,6 +39,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
   if(videoId % 2 == 0){
     link = "https://kappa.lol/uMrGF"
   }
+  else if(videoId == 9){
+      link = "https://kappa.lol/WCi9p"
+  }
   else{
     link = "https://kappa.lol/sGmAu"
   }
