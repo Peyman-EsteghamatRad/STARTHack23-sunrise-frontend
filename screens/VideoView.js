@@ -4,6 +4,7 @@ import { Video } from 'expo-av';
 import React, { useState } from 'react';
 import Chatbox from '../components/Chatbox';
 import Polls from '../components/Polls';
+import Stats from '../components/Stats';
 import { LogBox } from 'react-native';
 import Header from '../components/header';
 import image from '../assets/Stats.png';
@@ -35,6 +36,16 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
     setIsTweets(true);
     setIsLC(false);
   }
+  var link = ""
+  if(videoId % 2 == 0){
+    link = "https://kappa.lol/uMrGF"
+  }
+  else if(videoId == 9){
+      link = "https://kappa.lol/WCi9p"
+  }
+  else{
+    link = "https://kappa.lol/sGmAu"
+  }
   return (
     <View style={styles.container}>
       <View
@@ -45,7 +56,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       <Video
         ref={video}
         style={styles.video}
-        source={{uri: "https://kappa.lol/sGmAu"}}
+        source={{uri: link}}
         useNativeControls
         resizeMode="contain"
         isLooping
@@ -57,9 +68,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       </View>
       <View style={styles.wrapper}>
       <View style={styles.textContainer}>
-        <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff', fontFamily: 'poppins-bold',}}>LIVE CHAT</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff', fontFamily: 'poppins-bold',}}>🟢    POLLS</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff', fontFamily: 'poppins-bold',}}>TWEETS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff'}}>LIVE CHAT</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff'}}>🟢 POLLS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>TWEETS</Text></TouchableOpacity>
       </View>
       </View>
 

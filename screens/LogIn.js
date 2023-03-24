@@ -42,17 +42,14 @@ export default function LogIn({ navigation }) {
   fetch('https://sunrise-backend-kfxr.onrender.com/login', requestOptions)
       .then(response => {
         const status = response.status;
-        console.log(response.status);
         const data = response.json();
         return Promise.all([status, data]);
       })
       .then(([s, d]) => {
         if(s == 200){
-          console.log('OK')
           setSucc(true);
           setError(false);
           uid = d.id;
-          console.log(uid);
           navigation.navigate("streams")
         }else{
           setSucc(false);

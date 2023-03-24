@@ -42,7 +42,6 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       .then(response => {
         const status = response.status;
         if(status == 200){
-          console.log('OK')
           setSucc(true);
           setError(false);
           return;
