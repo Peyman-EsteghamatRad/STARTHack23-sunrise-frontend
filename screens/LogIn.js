@@ -72,7 +72,7 @@ export default function LogIn({ navigation }) {
         <View>
         <Header/>
         </View>
-        <Text style={styles.loginText}>Login</Text>
+        <Text style={styles.loginText}>LOGIN</Text>
 
         <Text style={styles.usernameText}>Email</Text>
           <TextInput
@@ -95,7 +95,7 @@ export default function LogIn({ navigation }) {
 
 
     {(error && <Text style={styles.errorText}>{errorMsg}</Text>)}
-    {(succ && <Text style={styles.succText}>Logd In</Text>)}
+    {(succ && <Text style={styles.succText}>Already logged in</Text>)}
 
       </View>
     );

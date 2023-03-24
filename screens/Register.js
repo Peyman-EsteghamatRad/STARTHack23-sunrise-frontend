@@ -65,7 +65,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       <View>
         <Header/>
       </View>
-      <Text style={styles.loginText}>Register</Text>
+      <Text style={styles.loginText}>REGISTER</Text>
 
       <Text style={styles.usernameText}>Username</Text>
         <TextInput

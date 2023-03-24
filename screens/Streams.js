@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, FlatList, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { LogBox } from 'react-native';
+import Header from '../components/header';
 
 
 
@@ -52,16 +53,27 @@ const Streams = ({navigation}) => {
   );
 
   return (
+    <View style={styles.container2}>
+    <View >
+        <Header/>
+    </View>
     <FlatList
       data={DATA}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
       contentContainerStyle={styles.container}
     />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container2:{
+    flex: 1,
+    backgroundColor: '#041522',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
     padding: 16,
     top: 50
