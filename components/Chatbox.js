@@ -87,7 +87,6 @@ export default function Chatbox(){
     const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 40,
         paddingHorizontal: 20,
     },
     item: {
@@ -104,13 +103,10 @@ export default function Chatbox(){
         justifyContent:'space-between',
         backgroundColor: '#fff',
         alignSelf: 'center',
-        marginTop: 30,
-        bottom: 13,
         borderRadius: 10,
 
     },
     wrapper: {
-        position: 'absolute',
         bottom: 0,
         width: '100%',
         height: '8%', // 1/9th of the screen height

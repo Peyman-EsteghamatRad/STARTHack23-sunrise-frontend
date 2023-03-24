@@ -20,9 +20,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     image: {
-        width: 140,
-        height: 40,
-        flex: 1,
-        resizeMode: 'center',
+        resizeMode: 'contain',
+        flex: 0.75,
     }
 })

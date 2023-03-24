@@ -8,6 +8,7 @@ import Stats from '../components/Stats';
 import { LogBox } from 'react-native';
 import Header from '../components/header';
 import image from '../assets/Stats.png';
+import { videoId } from './Streams';
 
 export default function VideoView() {
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
@@ -68,9 +69,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       </View>
       <View style={styles.wrapper}>
       <View style={styles.textContainer}>
-        <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff'}}>LIVE CHAT</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff'}}>🟢 POLLS</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>TWEETS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff', fontFamily: 'poppins-bold'}}>LIVE CHAT</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff', fontFamily: 'poppins-bold'}}>🟢 POLLS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff', fontFamily: 'poppins-bold'}}>STATS</Text></TouchableOpacity>
       </View>
       </View>
 
