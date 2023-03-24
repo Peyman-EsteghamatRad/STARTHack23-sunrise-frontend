@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 30,
         height: 80,
-        width: 375,
+        width: 400,
         color: '#020E18',
         alignItems: 'center',
+        justifyContent: 'center',
     },
     image: {
         width: 140,

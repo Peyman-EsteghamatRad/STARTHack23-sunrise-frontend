@@ -2,14 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { Video } from 'expo-av';
 import React, { useState } from 'react';
-import { TextInput } from 'react-native-gesture-handler';
 import Chatbox from '../components/Chatbox';
 import Polls from '../components/Polls';
 import Stats from '../components/Stats';
 import { LogBox } from 'react-native';
-import { videoId } from './Streams';
-import { Image } from 'react-native';
-
 
 
 export default function VideoView() {
@@ -48,6 +44,10 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
   }
   return (
     <View style={styles.container}>
+      <View
+      ><Header />
+      </View>
+      
       <View style={styles.videoContainer}>
       <Video
         ref={video}
@@ -63,7 +63,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       <View style={styles.textContainer}>
         <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff'}}>LIVE CHAT</Text></TouchableOpacity>
         <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff'}}>🟢 POLLS</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>STATS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>TWEETS</Text></TouchableOpacity>
       </View>
       </View>
 
@@ -82,6 +82,8 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#041522',
+    
   },
   videoContainer: {
     backgroundColor: '#041522',
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    fontFamily: 'poppins-bold',
     },
   panel: {
     zIndex: 3,

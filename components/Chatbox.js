@@ -68,7 +68,7 @@ export default function Chatbox(){
             keyExtractor={(item) => item.id} 
             data={people} 
             renderItem={({ item }) => ( 
-              <Text style={styles.item}> <Text style={{color: '#FF8515'}}>{item.name}</Text>: {item.comment}</Text>
+              <Text style={styles.item}> <Text style={{color: '#FF8515', fontFamily: 'poppins-lightitalic', fontSize: 14}}>{item.name}</Text>: {item.comment}</Text>
             )}
           />
     
@@ -92,11 +92,11 @@ export default function Chatbox(){
     },
     item: {
         flex: 1,
-        marginHorizontal: 10,
-        marginTop: 14,
-        padding: 0,
-        fontSize: 19,
-        color: '#fff'
+        marginHorizontal: 6,
+        marginTop: 10,
+        fontSize: 14,
+        color: '#fff',
+        fontFamily: 'poppins-lightitalic',
     },
     chatInput:{
         flex:1,
@@ -107,12 +107,13 @@ export default function Chatbox(){
         marginTop: 30,
         bottom: 13,
         borderRadius: 10,
+
     },
     wrapper: {
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        height: '11.11%', // 1/9th of the screen height
+        height: '8%', // 1/9th of the screen height
         backgroundColor: '#ffffff',
         borderTopWidth: 1,
         borderTopColor: '#e0e0e0',
@@ -137,6 +138,7 @@ export default function Chatbox(){
       buttonText: {
         color: '#ffffff',
         fontSize: 16,
+        fontFamily: 'poppins-regular',
       },
     });
 

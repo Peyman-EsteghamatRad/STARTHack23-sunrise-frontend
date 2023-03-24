@@ -22,10 +22,10 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
         </Text>
         <View style={{ flexDirection:"row", alignContent: 'center', justifyContent: 'center', gap: 30}}>
             <TouchableOpacity style={styles.buttonStyleLogin} onPress={() => navigation.navigate("login")}>
-              <Text style={styles.buttonText}>Login</Text>
+              <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonStyleRegister} onPress={() => navigation.navigate("register")}>
-              <Text style={styles.buttonText}>Register</Text>
+              <Text style={styles.buttonText}>REGISTER</Text>
             </TouchableOpacity>
         </View>
       </View>
@@ -51,24 +51,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#041522'
   },
   headText: {
-    paddingTop: 200,
-    color: '#FFFFFF',
+    paddingTop: 190,
+    color: 'white',
     alignSelf: 'center',
-    fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 16,
     paddingBottom: 30,
     fontFamily: 'poppins-bold',
   },
   buttonStyleLogin: {
-    width: 95,
-    height: 60,
+    width: 100,
+    height: 55,
     padding: 20,
     backgroundColor: '#FF8515',
     borderRadius: 20,
   },
   buttonStyleRegister: {
     width: 100,
-    height: 60,
+    height: 55,
     padding: 20,
     backgroundColor: '#7C15FF',
     borderRadius: 20,
@@ -77,8 +76,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     alignSelf: 'center',
-    fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'poppins-bold',
   }
   
