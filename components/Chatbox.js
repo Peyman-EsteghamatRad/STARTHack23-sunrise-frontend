@@ -18,7 +18,6 @@ export default function Chatbox(){
 
 
 
-    console.log(videoId);
 
     const sendMyMsg = () =>{
         const requestOptions = {
@@ -37,7 +36,6 @@ export default function Chatbox(){
     }
     
     const getComments = () =>{
-        console.log("sent");
         fetch('https://sunrise-backend-kfxr.onrender.com/getLatestMsgs?id='+videoId)
         .then(
             response => response.json()

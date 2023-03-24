@@ -5,7 +5,11 @@ import React, { useState } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 import Chatbox from '../components/Chatbox';
 import Polls from '../components/Polls';
+import Stats from '../components/Stats';
 import { LogBox } from 'react-native';
+import { videoId } from './Streams';
+import { Image } from 'react-native';
+
 
 
 export default function VideoView() {
@@ -35,13 +39,20 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
     setIsTweets(true);
     setIsLC(false);
   }
+  var link = ""
+  if(videoId % 2 == 0){
+    link = "https://kappa.lol/uMrGF"
+  }
+  else{
+    link = "https://kappa.lol/sGmAu"
+  }
   return (
     <View style={styles.container}>
       <View style={styles.videoContainer}>
       <Video
         ref={video}
         style={styles.video}
-        source={{uri: "https://kappa.lol/sGmAu"}}
+        source={{uri: link}}
         useNativeControls
         resizeMode="contain"
         isLooping
@@ -52,13 +63,14 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       <View style={styles.textContainer}>
         <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff'}}>LIVE CHAT</Text></TouchableOpacity>
         <TouchableOpacity style={styles.panel} onPress={changeToPolls}><Text style={{color:'#fff'}}>🟢 POLLS</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>TWEETS</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.panel} onPress={changeToTweets}><Text style={{color:'#fff'}}>STATS</Text></TouchableOpacity>
       </View>
       </View>
 
       <View style={styles.FunktionArea}>
         {isLC && <Chatbox/>}
         {isPolls && <Polls/>}
+        {isStats && <Polls/>}
 
       </View>
 
