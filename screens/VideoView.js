@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Text, ImageBackground } from 'react-native';
 import { Video } from 'expo-av';
 import React, { useState } from 'react';
 import Chatbox from '../components/Chatbox';
 import Polls from '../components/Polls';
 import { LogBox } from 'react-native';
 import Header from '../components/header';
-
+import image from '../assets/Stats.png';
 
 export default function VideoView() {
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
@@ -52,6 +52,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
         onPlaybackStatusUpdate={setStatus}
       />
       </View>
+      <View>
+        
+      </View>
       <View style={styles.wrapper}>
       <View style={styles.textContainer}>
         <TouchableOpacity style={styles.panel} onPress={changeToLC}><Text style={{color:'#fff', fontFamily: 'poppins-bold',}}>LIVE CHAT</Text></TouchableOpacity>
@@ -63,7 +66,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
       <View style={styles.FunktionArea}>
         {isLC && <Chatbox/>}
         {isPolls && <Polls/>}
-
+        {isStats && <View><ImageBackground source={image} style={styles.image}></ImageBackground></View>}
       </View>
 
       
@@ -100,8 +103,8 @@ const styles = StyleSheet.create({
   },
   FunktionArea:{
     backgroundColor: '#041522',
-    height:500
-    
+    height:500,
+    flex: 2.5,
 
   },
   chatInput:{
@@ -112,6 +115,15 @@ const styles = StyleSheet.create({
     fontFamily: 'poppins-regular',
   },
   wrapper:{
-    zIndex:1
-  }
+    zIndex:1,
+    flex: 0.19,
+  },
+  image: {
+    flex: 1,
+    width: 400,
+    height: 500,
+    justifyContent: 'center',
+    backgroundColor: '#041522',
+    alignSelf: 'center',
+  },
 });

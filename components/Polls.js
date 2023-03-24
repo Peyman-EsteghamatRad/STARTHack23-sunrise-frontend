@@ -10,7 +10,7 @@ LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
 
     const choices = [
-        { id: 1, choice: "Russland", votes: 12 },
+        { id: 1, choice: "Russia", votes: 12 },
         { id: 5, choice: "Canada", votes: 9 },
       ];
 
@@ -29,11 +29,11 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
         { id: 4, choice: "3", votes: 6 },
         { id: 5, choice: "4", votes: 7 },
         { id: 5, choice: "5", votes: 9 },
-        { id: 5, choice: "mehr als 5", votes: 15 },
+        { id: 5, choice: "more than 5", votes: 15 },
       ];
     return(
         <ScrollView>
-        
+        <Text style = {styles.quest}>Who will win the game?</Text>
         <RNPoll
         choiceTextStyle = {{color:'#fff'}}
         totalVotes={30}
@@ -42,9 +42,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
             console.log("SelectedChoice: ", selectedChoice)
         }
         />
-                <Text style = {styles.quest}>Who will win the game?</Text>
+                
 
-
+                <Text style = {styles.quest}>Who scores the next goal?</Text>
         <RNPoll
         choiceTextStyle = {{color:'#fff'}}
         totalVotes={30}
@@ -53,8 +53,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
             console.log("SelectedChoice: ", selectedChoice)
         }
         />
-                <Text style = {styles.quest}>Who scores the next goal?</Text>
+                
 
+                <Text style = {styles.quest}>How many goals will be scored in total?</Text>
         <RNPoll
             choiceTextStyle = {{color:'#fff'}}
             totalVotes={30}
@@ -63,7 +64,6 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
                 console.log("SelectedChoice: ", selectedChoice)
             }
         />
-                <Text style = {styles.quest}>How many goals will be scored in total?</Text>
 
         </ScrollView>
 
@@ -76,6 +76,6 @@ const styles = StyleSheet.create({
         color: '#FFC700',
         textAlign:'center',
         fontSize:20,
-        
+        fontFamily: 'poppins-regular'
     }
   });
