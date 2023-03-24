@@ -18,6 +18,8 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 let [fontsLoaded]= useFonts({
     'poppins-bold': require('./assets/fonts/Poppins-Bold.ttf'),
     'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'poppins-lightitalic': require('./assets/fonts/Poppins-LightItalic.ttf'),
+
 });
 
   if (!fontsLoaded) {

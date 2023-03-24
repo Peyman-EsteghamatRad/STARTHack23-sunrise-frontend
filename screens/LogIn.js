@@ -69,9 +69,9 @@ export default function LogIn({ navigation }) {
     return (
       
       <View style={styles.container}>
-        <View>
+        
         <Header/>
-        </View>
+        
         <Text style={styles.loginText}>LOGIN</Text>
 
         <Text style={styles.usernameText}>Email</Text>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   loginText:{
     textAlign:'center',
-    top: 120,
+    top: 80,
     fontWeight: 'bold',
     color: '#ffffff',
     fontSize: 40,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   userInput:{
     alignSelf: 'center',
-    top: 210,
+    top: 150,
     width:350,
     borderRadius: 10,
     backgroundColor: '#ffffff',
@@ -130,13 +130,13 @@ const styles = StyleSheet.create({
   },
   usernameText: {
     color: '#FFC700',
-    top:205,
+    top:145,
     right: 145,
     fontFamily: 'poppins-regular',
   },
   passwordInput:{
     alignSelf: 'center',
-    top: 260,
+    top: 220,
     width:350,
     borderRadius: 10,
     backgroundColor: '#ffffff',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   passwordText: {
     color: '#FFC700',
-    top:255,
+    top:215,
     right: 130,
     fontFamily: 'poppins-regular',
   },
