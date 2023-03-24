@@ -82,6 +82,7 @@ export default function LogIn({ navigation }) {
 
         <Text style={styles.passwordText}>Password</Text>
           <TextInput
+          secureTextEntry={true}
         style={styles.passwordInput}
         onChangeText = {(data) => changePassword(data)}
       />
