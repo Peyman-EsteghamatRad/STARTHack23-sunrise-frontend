@@ -81,6 +81,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 
 <Text style={styles.passwordText}>Password</Text>
         <TextInput
+        secureTextEntry={true}
       style={styles.passwordInput}
       onChangeText = {(data) => changePassword(data)}
     />
